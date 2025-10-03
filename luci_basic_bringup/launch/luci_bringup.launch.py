@@ -17,14 +17,15 @@ def generate_launch_description():
         'grpc_interface_node'
     )
 
-    luci_grpc_node = TimerAction(
-            period=3.0,
-            actions=[
-                ExecuteProcess(
-                    cmd=[grpc_executable, '-a', '192.168.0.200'],
-                    output='screen'
-                )
-        ]
+    luci_grpc_node = ExecuteProcess(
+        cmd=[grpc_executable, '-a', '192.168.0.200'],
+        output='screen'
+    )
+
+    luci_odom_node = Node(
+        package="luci_encoder_odometry",
+        executable="encoder_to_odom_node",
+        name="encoder_to_odom_node",
     )
 
     luci_wheelchair_node = Node(
@@ -34,5 +35,6 @@ def generate_launch_description():
     )
     return LaunchDescription ([
         luci_grpc_node,
-        luci_wheelchair_node
+        luci_wheelchair_node,
+        luci_odom_node
     ])
