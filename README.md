@@ -133,8 +133,8 @@ ros_ws
     ```
 5. Open a new terminal and run the luci-odom node:
     ```bash
-    ros2 run luci_odom luci_odom_node
-            ```
+    ros2 run ros2 run luci_encoder_odometry encoder_to_odom_node
+    ```
 ---
 
 ## Changing the Robot's IP Address
