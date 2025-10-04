@@ -55,12 +55,12 @@ The `luci_basic_bringup` package provides launch files and configurations to ini
 - **Name**: `/odom`  
     **Message Type**: `[nav_msgs/msg/Odometry]`  
 
-- **Name**: `/odometry/filtered`  
-    **Message Type**: `[nav_msgs/msg/Odometry]`  
+<!-- - **Name**: `/odometry/filtered`  
+    **Message Type**: `[nav_msgs/msg/Odometry]`   -->
 
 ---
 
-## Prerequisiteshttps://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html
+## Prerequisites
 
 Ensure your ROS2 workspace includes the following packages:  
 ```bash
@@ -77,7 +77,7 @@ ros_ws
 - [luci-ros2-msgs](https://github.com/UW-CTRL/luci-ros2-msgs): Defines ROS2 message types for LUCI. 
 - [luci-ros2-odom](https://github.com/UW-CTRL/luci-ros2-odom): Creates the odom values from the wheelchair's encoders.
 - [luci-ros2-transforms](https://github.com/lucimobility/luci-ros2-transforms): Provides transformation utilities for LUCI. 
-- [efk_localization_node](https://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html): Create the filtered odom topic for better localization using the wheelchair's IMU
+<!-- - [efk_localization_node](https://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html): Create the filtered odom topic for better localization using the wheelchair's IMU -->
 
 ---
 
@@ -131,7 +131,10 @@ ros_ws
     ```bash
     ros2 run luci_transforms quickie_500m_tf_node
     ```
-
+5. Open a new terminal and run the luci-odom node:
+    ```bash
+    ros2 run luci_odom luci_odom_node
+            ```
 ---
 
 ## Changing the Robot's IP Address
