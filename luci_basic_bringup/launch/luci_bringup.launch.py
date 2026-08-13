@@ -64,7 +64,7 @@ def generate_launch_description():
 
     luci_wheelchair_node = Node(
         package="luci_transforms",
-        executable="quickie_500m_tf_node",
+        executable="luci_dev_kit_tf_node",
         name="quickie_500m_tf_node",
     )
 
