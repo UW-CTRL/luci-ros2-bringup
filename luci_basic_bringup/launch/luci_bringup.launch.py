@@ -18,7 +18,8 @@ def generate_launch_description():
     )
 
     luci_grpc_node = ExecuteProcess(
-        cmd=[grpc_executable, '-a', '192.168.0.200'],
+        # cmd=[grpc_executable, '-a', '192.168.0.200'], # WIFI
+        cmd=[grpc_executable, '-a', '10.2.10.3'], # ETHERNET
         output='screen'
     )
 
