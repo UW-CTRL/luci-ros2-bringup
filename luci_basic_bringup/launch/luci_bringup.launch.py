@@ -14,10 +14,12 @@ def generate_launch_description():
         grpc_pkg_prefix, 'lib', 'luci_grpc_interface', 'grpc_interface_node'
     )
 
+    # The chair's address on the Ethernet link to the Jetson (eno1, 10.2.10.0/24). Its Wi-Fi
+    # address, 192.168.0.200, also answers, but with 25-300 ms latency against ~1 ms here.
     # The node exits if it can't reach the chair within 5 s of starting, for instance when the
     # chair is still booting; restart it until it connects
     luci_grpc_node = ExecuteProcess(
-        cmd=[grpc_executable, '-a', '192.168.0.200'],
+        cmd=[grpc_executable, '-a', '10.2.10.3'],
         output='screen',
         respawn=True,
         respawn_delay=2.0,
